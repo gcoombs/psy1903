@@ -30,12 +30,12 @@ let answer2 = prompt("What is " + x2 + " + " + y2 + "?");
 let end2 = Date.now();
 let rt2 = (end2 - start2) / 1000;
 let correct2 = x2 + y2;
-// Pop up answer from previous question
 if (answer2 == correct2) {
     alert("Correct! You answered " + answer2 + " in " + rt2 + " seconds!");
 } else {
     alert("I'm sorry, that's wrong. You answered " + answer2 + " but the correct answer was " + correct2 + ".");
 }
+
 // Repeat process for math problem #3
 let x3 = Math.floor(Math.random() * 10) + 1;
 let y3 = Math.floor(Math.random() * 10) + 1;
@@ -45,7 +45,6 @@ let answer3 = prompt("What is " + x3 + " + " + y3 + "?");
 let end3 = Date.now();
 let rt3 = (end3 - start3) / 1000;
 let correct3 = x3 + y3;
-// Pop up answer from previous question
 if (answer3 == correct3) {
     alert("Correct! You answered " + answer3 + " in " + rt3 + " seconds!");
 } else {
