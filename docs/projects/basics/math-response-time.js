@@ -1,5 +1,7 @@
 // Prompt with instructions
-alert("In this experiment we will measure your response time. You will be shown a series of simple math equations. Answer these equations as quickly and accurately as you can.");
+alert(`In this experiment we will measure your response time. 
+    You will be shown a series of simple math equations. 
+    Answer these equations as quickly and accurately as you can.`);
 
 // Set two numbers
 let x1 = Math.floor(Math.random() * 10) + 1;
