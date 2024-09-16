@@ -2,16 +2,19 @@
 
 
 ## AI Prompts
-_How do I use innerHTML to place text saying "What is 2 + 2?" into a form paragraph?_
+_1. How do I use innerHTML to place text saying "What is 2 + 2?" into a form paragraph?_
 
-_I have this JavaScript code:
+_2. I have this JavaScript code:_
+```
 let num1 = Math.floor(Math.random() * 10) + 1;;
 let num2 = Math.floor(Math.random() * 10) + 1;;
 let correctAnswer = num1 + num2;
 let question1 = 'What is ' + num1 + ' + ' + num2 + '?';
-I then want question1 to be displayed as the input to a form question using innerHTML. How do I do this?_
+```
+_I then want question1 to be displayed as the input to a form question using innerHTML. How do I do this?_
 
-_I have the following JavaScript Code. Where do I put the Date.now() lines to accurately capture the time the question is put up on the screen and the time the answer is submitted? 
+_3. I have the following JavaScript Code. Where do I put the Date.now() lines to accurately capture the time the question is put up on the screen and the time the answer is submitted?_
+```
 // Generate two random numbers and correct answer to their sum
 let num1 = Math.floor(Math.random() * 10) + 1;;
 let num2 = Math.floor(Math.random() * 10) + 1;;
@@ -43,13 +46,15 @@ mathForm1.addEventListener('submit', function (event) {
     }
     let fullFeedback = feedback + ' You answered in ' + rt1 + ' seconds.';
     results1.innerHTML = fullFeedback;
-});_
+});
+```
 
-_Using html & JavaScript, how do I load a new page once a submit button has been hit?_
+_4. Using html & JavaScript, how do I load a new page once a submit button has been hit?_
 
-_Where do I put form.style.display = 'none';?_
+_5. Where do I put form.style.display = 'none';?_
 
-_I have this html code: 
+_6. I have this html code:
+```
 <!doctype html>
 <html lang='en'>
 
@@ -73,8 +78,10 @@ _I have this html code:
 </body>
 
 </html>
+```
 
-And this JavaScript in my app.js:
+_And this JavaScript in my app.js:_
+```
 // Generate two random numbers and correct answer to their sum
 let num1 = Math.floor(Math.random() * 10) + 1;;
 let num2 = Math.floor(Math.random() * 10) + 1;;
@@ -111,10 +118,10 @@ mathForm1.addEventListener('submit', function (event) {
     let fullFeedback = 'You answered ' + result1 + ' ' + feedback + ' in ' + rt1 + ' seconds.';
     results1.innerHTML = fullFeedback;
 });
+```
+_Please identify where the submit event handler is_
 
-Please identify where the submit event handler is_
-
-_In the above code, where would I place "form.style.display = 'none';" in order to not show the math problem after submit has been clicked and only show the fullFeedback?_
+_7. In the above code, where would I place "form.style.display = 'none';" in order to not show the math problem after submit has been clicked and only show the fullFeedback?_
 
 
 
