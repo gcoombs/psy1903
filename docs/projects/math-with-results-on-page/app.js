@@ -10,6 +10,9 @@ let question1 = 'What is ' + num1 + ' + ' + num2 + '?';
 let questionParagraph1 = document.getElementById('questionParagraph1');
 questionParagraph1.innerHTML = question1;
 
+// Capture the start time when the question is displayed
+let start1 = Date.now();
+
 mathForm1.addEventListener('submit', function (event) {
     // Prevent the default form submission b
     event.preventDefault();
@@ -17,14 +20,18 @@ mathForm1.addEventListener('submit', function (event) {
     // Collect the response
     let result1 = mathForm1.elements['answer1'].value;
 
+    // Collect submit time and calculate RT
+    let end1 = Date.now();
+    let rt1 = (end1 - start1) / 1000;
+
     // Generate correct/incorrect feedback
     feedback = '';
     if (result1 == correctAnswer1) {
-        feedback = "You got it correct!";
+        feedback = "You got it correct! The correct answer is " + correctAnswer1;
     } else {
-        feedback = "You got it incorrect.";
+        feedback = "You got it incorrect. The correct answer is " + correctAnswer1;
     }
-    let fullFeedback = feedback + ' The answer is ' + correctAnswer1 + '.';
+    let fullFeedback = feedback + ' You answered in ' + rt1 + ' seconds.';
     results1.innerHTML = fullFeedback;
 });
 
@@ -42,6 +49,10 @@ let question2 = 'What is ' + num3 + ' + ' + num4 + '?';
 let questionParagraph2 = document.getElementById('questionParagraph2');
 questionParagraph2.innerHTML = question2;
 
+// Capture the start time when the question is displayed
+let start2 = Date.now();
+
+
 mathForm2.addEventListener('submit', function (event) {
     // Prevent the default form submission b
     event.preventDefault();
@@ -49,14 +60,18 @@ mathForm2.addEventListener('submit', function (event) {
     // Collect the response
     let result2 = mathForm2.elements['answer2'].value;
 
+    // Collect submit time and calculate RT
+    let end2 = Date.now();
+    let rt2 = (end2 - start2) / 1000;
+
     // Generate correct/incorrect feedback
     feedback = '';
     if (result2 == correctAnswer2) {
-        feedback = "You got it correct!";
+        feedback = "You got it correct! The correct answer is " + correctAnswer2;
     } else {
-        feedback = "You got it incorrect.";
+        feedback = "You got it incorrect. The correct answer is " + correctAnswer2;
     }
-    let fullFeedback = feedback + ' The answer is ' + correctAnswer2 + '.';
+    let fullFeedback = feedback + ' You answered in ' + rt2 + ' seconds.';
     results2.innerHTML = fullFeedback;
 });
 
@@ -74,6 +89,9 @@ let question3 = 'What is ' + num5 + ' + ' + num6 + '?';
 let questionParagraph3 = document.getElementById('questionParagraph3');
 questionParagraph3.innerHTML = question3;
 
+// Capture the start time when the question is displayed
+let start3 = Date.now();
+
 mathForm3.addEventListener('submit', function (event) {
     // Prevent the default form submission b
     event.preventDefault();
@@ -81,14 +99,18 @@ mathForm3.addEventListener('submit', function (event) {
     // Collect the response
     let result3 = mathForm3.elements['answer3'].value;
 
+    // Collect submit time and calculate RT
+    let end3 = Date.now();
+    let rt3 = (end3 - start3) / 1000;
+
     // Generate correct/incorrect feedback
     feedback = '';
     if (result3 == correctAnswer3) {
-        feedback = "You got it correct!";
+        feedback = "You got it correct! The correct answer is " + correctAnswer3;
     } else {
-        feedback = "You got it incorrect.";
+        feedback = "You got it incorrect. The correct answer is " + correctAnswer3;
     }
-    let fullFeedback = feedback + ' The answer is ' + correctAnswer3 + '.';
+    let fullFeedback = feedback + ' You answered in ' + rt3 + ' seconds.';
     results3.innerHTML = fullFeedback;
 });
 
