@@ -32,5 +32,11 @@ mathForm1.addEventListener('submit', function (event) {
         feedback = '(incorrect)';
     }
     let fullFeedback = 'You answered ' + result1 + ' ' + feedback + ' in ' + rt1 + ' seconds.';
+
+    // Hide the form
+    mathForm1.style.display = 'none';
+
+    // Display Feedback
     results1.innerHTML = fullFeedback;
+
 });
