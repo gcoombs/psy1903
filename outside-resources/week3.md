@@ -53,7 +53,7 @@ _4. Using html & JavaScript, how do I load a new page once a submit button has b
 
 _5. Where do I put form.style.display = 'none';?_
 
-_6. I have this html code:
+_6. I have this html code:_
 ```
 <!doctype html>
 <html lang='en'>
@@ -127,4 +127,5 @@ _7. In the above code, where would I place "form.style.display = 'none';" in ord
 
 
 ## Outside sites
-_Link any outside sites you referenced this week. You should exclude any resources/links that were provided in the course material._
+_https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML_
+_https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder_
