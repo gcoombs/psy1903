@@ -27,3 +27,9 @@ if (response == correctAnswer) {
 
 alert(feedback + ' The expected answer is ' + correctAnswer + '.');
 
+let numberEntered = prompt('Please enter a whole number.');
+if (numberEntered % 2 == 0) {
+    alert('The number you entered is even.')
+} else {
+    alert('The number you entered is odd.')
+}
