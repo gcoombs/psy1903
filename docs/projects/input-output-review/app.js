@@ -4,8 +4,14 @@ let results = document.getElementById('results');
 // Generate a new variable we want to put back into the equation blank space in html
 let equation = document.getElementById('equation');
 
-// Want to check that this is doing anything before we actually do the equation
-equation.innerHTML = 'Hello World';
+// Now filling in code for the actual equation
+let num1 = Math.floor(Math.random() * 10) + 1;
+let num2 = Math.floor(Math.random() * 10) + 1;
+console.log(num1); // To confirm that numbers are being randomly generated; not necessary for "final" code
+console.log(num2); // To confirm that numbers are being randomly generated; not necessary for "final" code
+// Using concatenation, fill out the equation with the two randomly generated numbers (num1 & num2)
+// Because this is not in an eventListener, this will happen when the page first loads (not waiting for an action to execute)
+equation.innerHTML = 'What is ' + num1 + ' + ' + num2 + '?';
 
 // Listen for the form to be submitted
 form.addEventListener('submit', function (event) {
