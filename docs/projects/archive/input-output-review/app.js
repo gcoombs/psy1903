@@ -30,4 +30,7 @@ form.addEventListener('submit', function (event) {
 
     // Report the results
     results.innerHTML = 'Hello ' + response + '!';
+
+    // Hide the form (including the instructions) after they answer
+    form.style.display = 'none';
 });
