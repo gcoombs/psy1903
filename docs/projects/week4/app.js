@@ -1,9 +1,3 @@
-// let feedback = 'correct';
-// let responseTime = 2.4;
-// let answer = 25;
-
-// alert(`You are ${feedback}. Answer: ${answer}. Response time: ${responseTime}.`);
-
 // Part 1. Functions
 // let num1 = getRandomNumber(1, 10);
 // let num2 = getRandomNumber(1, 10);
@@ -11,9 +5,9 @@
 
 // displayRandomNumber();
 
-function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * max) + min;
-}
+// function getRandomNumber(min, max) {
+//     return Math.floor(Math.random() * max) + min;
+// }
 
 // function displayRandomNumber() {
 //     alert(getRandomNumber(1, 10));
@@ -180,3 +174,6 @@ for (let i = 0; i < 3; i++) {
 
 }
 console.log(results);
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * max) + min;
+}
