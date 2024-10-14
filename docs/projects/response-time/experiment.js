@@ -2,62 +2,51 @@ let jsPsych = initJsPsych();
 
 let timeline = [];
 
-// Welcome/Instructions
 let welcomeTrial = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-    <h1>Welcome to the Lexical Decision Task!</h1> 
-    
-    <p>In this experiment, you will be shown a series of characters and asked to categorize whether the characters make up a word or not.</p>
-    <p>There are three parts to this experiment.</p>
-    <p>Press SPACE to begin the first part.</p>
+    <h1>Welcome to the Response Time Task!</h1> 
+    <p>In this experiment, you will see a blue or orange circle on the screen</p>
+    <p>If you see a blue circle, press the F key.</p>
+    <p>If you see a orange circle, press the J key.</p>
+    <p class='instructions'>Press SPACE to begin.</p>
     `,
-    choices: [' ']
+    choices: [' '],
 };
 timeline.push(welcomeTrial);
 
-// Shuffle the conditions
-// conditions = jsPsych.randomization.repeat(conditions, 1); // once nested in blocks, don't need this line any more
 
-for (let block of conditions) {
-
-    let blockConditions = jsPsych.randomization.repeat(block.conditions, 1);
-
-    let blockIntroTrial = {
+for (let condition of conditions) {
+    let conditionTrial = {
         type: jsPsychHtmlKeyboardResponse,
         stimulus: `
-            <h1>${block.title}</h1>
-            <p>You are about to see a series of ${block.count} characters.</p>
-            <p>If the characters make up a word, press the F key.</p>
-            <p>If the characters do not make up a word, press the J key.</p>
-            <p>Press SPACE to begin.</p>
+            <img src='images/${condition}-circle.png'>
             `,
-        choices: [' '],
-    };
-    timeline.push(blockIntroTrial);
-
-    for (let condition of blockConditions) {
-        let conditionTrial = {
-            type: jsPsychHtmlKeyboardResponse,
-            stimulus: `<h1>${condition.characters}`,
-            choices: ['j', 'f'],
-            data: {
-                collect: true,
-                characters: condition.characters,
-                blockId: block.title
-            },
-            on_finish: function (data) {
-                if (data.response == 'f' && condition.isWord == true) {
-                    data.correct = true;
-                } else if (data.response == 'j' && condition.isWord == false) {
-                    data.correct = true;
-                } else {
-                    data.correct = false;
-                }
+        choices: ['f', 'j'],
+        data: {
+            collect: true,
+            condition: condition,
+        },
+        on_finish: function (data) {
+            if (data.response == 'f' && condition == 'blue') {
+                data.correct = true;
+            } else if (data.response == 'j' && condition == 'orange') {
+                data.correct = true;
+            } else {
+                data.correct = false;
             }
         }
-        timeline.push(conditionTrial);
+    };
+    timeline.push(conditionTrial);
+
+    let fixationTrial = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: `+`,
+        trial_duration: 500, // 500 milliseconds = .5 seconds
+        choices: ['NO KEY']
     }
+
+    timeline.push(fixationTrial);
 }
 
 let resultsTrial = {
@@ -70,7 +59,7 @@ let resultsTrial = {
         `,
     on_start: function () {
         //  ⭐ Update the following three values as appropriate ⭐
-        let prefix = 'lexical-decision';
+        let prefix = 'math-response-time';
         let dataPipeExperimentId = 'your-experiment-id-here';
         let forceOSFSave = false;
 
@@ -112,24 +101,23 @@ let resultsTrial = {
 }
 timeline.push(resultsTrial);
 
-// Debrief
 let debriefTrial = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-    <h1>Thank you!</h1>
-    <p>You are about to see a series of characters.</p>
-    <p>You can now close this tab.</p>
+    <h1>Thank you for participating!</h1> 
+    <p>You can close this tab.</p>
     `,
-    choices: ['NO_KEYS'],
+    choices: 'NO_KEYS',
     on_start: function () {
         let data = jsPsych.data
             .get()
             .filter({ collect: true })
-            .ignore(['trial_type', 'plugin_version', 'collect', 'stimulus'])
+            .ignore(['stimulus', 'trial_type', 'plugin_version', 'collect'])
             .csv();
         console.log(data);
     }
-}
+};
+
 timeline.push(debriefTrial);
 
 jsPsych.run(timeline);
