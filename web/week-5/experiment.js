@@ -1,4 +1,5 @@
 let jsPsych = initJsPsych();
+// console.log('initJsPsych:', typeof initJsPsych);
 
 let timeline = [];
 
