@@ -20,3 +20,15 @@ head(experiment_data)
 # Check the structure of the dataset
 str(experiment_data)
 ```
+#### Functions ----------------------------------------------------
+
+```{r}
+## Generate one or more random numbers between min and max (defaults: one number between 1–10)
+getRandomNumber <- function(min = 1, max = 10, number = 1) {
+  sample(min:max, number)
+}
+```
+
+```{r}
+## Generate 
+```
