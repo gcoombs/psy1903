@@ -77,8 +77,10 @@ for (i in 1:nrow(experiment_data)) {
 ## Q4.2
 ```{r}
 experiment_data$rt_category_vec <- NA
-
 experiment_data$rt_category_vec <- sapply(experiment_data$rt, classify_rt)
+
+experiment_data$rt_category_vec2 <- NA
+experiment_data$rt_category_vec2 <- classify_rt(experiment_data$rt)
 ```
 
 ## Q4.3
