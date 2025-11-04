@@ -72,7 +72,6 @@ experiment_data$rt_category_loop <- NA
 for (i in 1:nrow(experiment_data)) {
       experiment_data[i, "rt_category_loop"] <- classify_rt(experiment_data[i, "rt"])
   }
-}
 ```
 
 ## Q4.2
@@ -104,9 +103,9 @@ flag_fast(experiment_data$rt)
 
 ## Q5.2
 ```{r}
-rm(threshold)
+# rm(threshold)
 
-flag_fast(experiment_data$rt)
+# flag_fast(experiment_data$rt)
 ```
 
 ## Q5.3
