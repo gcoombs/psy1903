@@ -1,4 +1,4 @@
-"subject_id","tef10_score","behavior.practice_mean_rt","behavior.practice_acc","behavior.magnitude_mean_rt","behavior.magnitude_acc","behavior.parity_mean_rt","behavior.parity_acc","behavior.practice_sd_rt","behavior.magnitude_sd_rt","behavior.parity_sd_rt"
+"subject_id","tef10_score","practice_mean_rt","practice_acc","magnitude_mean_rt","magnitude_acc","parity_mean_rt","parity_acc","practice_sd_rt","magnitude_sd_rt","parity_sd_rt"
 "npt-experiment-2025-11-05-10-33-05",1.22222222222222,545.646785961442,1,502.855310556572,0.818181818181818,544.21498777559,0.866666666666667,100.329631258699,104.515839677189,63.9091844701982
 "npt-experiment-2025-11-05-10-45-51",1.8,519.532375831553,1,576.629784068269,0.875,488.341236561664,0.8,71.7071811159541,90.494653405698,76.126047787332
 "npt-experiment-2025-11-05-10-59-21",1.3,587.904765884938,1,529.582607201847,0.941176470588235,547.879773377877,0.875,88.7405600916101,87.039999668824,67.7055053784553

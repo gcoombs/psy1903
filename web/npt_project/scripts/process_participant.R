@@ -1,11 +1,15 @@
-process_participant <- function(file_path) {
+process_participant <- function(file_name) {
+  #### Load File and Extract ID ------------------------------------------------
   ## Derive a subject id from the filename (no extension)
-  subject_id <- sub("\\.csv$", "", basename(file_path))
+  subject_id <- sub("\\.csv$", "", basename(file_name))
   
   ## Read the raw CSV
-  participant_data <- read.csv(file_path, stringsAsFactors = FALSE)
+  participant_data <- read.csv(
+    here::here("data", "raw", file_name),
+    stringsAsFactors = FALSE
+  )
   
-  #### Questionnaire score ------------------------------------------------
+  #### Questionnaire score -----------------------------------------------------
   ## Score questionnaire with our defaults (reverse 2,4,7 on 0–4 scale)
   tef10_score <- score_questionnaire(
     json_string = participant_data[participant_data$trialType == "questionnaire", "response"],
@@ -15,13 +19,18 @@ process_participant <- function(file_path) {
   )
   
   
-  #### Behavioral summary -------------------------------------------------
+  #### Behavioral summary ------------------------------------------------------
   ## Filter and summarize behavioral data (250–900 ms)
   behavior <- summarize_behavior(participant_data, rt_min = 250, rt_max = 900)
   
   
-  #### Save participant summary -------------------------------------------
-  dir.create("../data/cleaned/participants", recursive = TRUE, showWarnings = FALSE)
+  #### Save participant summary ------------------------------------------------
+  ## Ensure output directory is created
+  dir.create(
+    here::here("data", "cleaned", "participants"),
+    recursive = TRUE,
+    showWarnings = FALSE
+  )
   
   ## Combine into a single-row participant summary
   df_clean <- data.frame(
@@ -34,11 +43,11 @@ process_participant <- function(file_path) {
   ## Save summary CSV to cleaned/participants
   write.csv(
     df_clean,
-    file = file.path("../data/cleaned/participants", paste0(subject_id, ".csv")),
+    here::here("data", "cleaned", paste0(subject_id, "_processed.csv")),
     row.names = FALSE
   )
   
-  #### Return output ------------------------------------------------------
+  #### Return output -----------------------------------------------------------
   stopifnot(nrow(df_clean) == 1)  # one row per participant
   return(df_clean)
 }

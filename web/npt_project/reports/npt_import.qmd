@@ -1,6 +1,6 @@
 ---
 title: "Processing Individual Participant"
-author: "Your Name"
+author: "Garth Coombs"
 format: html
 execute:
   echo: true
@@ -26,7 +26,7 @@ source("../scripts/process_participant.R")
 #### 1) Find files -------------------------------------------------------------
 ```{r}
 # Prefer a pattern to avoid accidentally pulling other CSVs
-file_list <- list.files("../data/raw", pattern = "^npt-experiment-.*\\.csv$", full.names = TRUE)
+file_list <- list.files("../data/raw", pattern = "^npt-experiment-.*\\.csv$", full.names = FALSE)
 ```
 
 #### 2) Apply our participant processor ---------------------------------------
