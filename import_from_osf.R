@@ -13,7 +13,8 @@ p_load("httr", "jsonlite", "fs", "stringr", "lubridate")
 ## so keep it private and do not share it publicly.
 
 ## TOKEN <- "paste_your_token_here"
-TOKEN <- "SzqxYX88znq4U5Epy5JV3t8NsH88RWLygXhLq1gi6hj5HWiEfBeQ4ORNaikCObqohPZL8G"
+## Note: Keep this token for your W11 Emotional Stroop Data:
+TOKEN <- "3fhH3IItoG8d4gqYzufD7UbUQ1AEm6EMWW8NGsrkl9Mdx7GlUu2VGXkqClblx38R5BiXYh"
 
 ## 2. Project Node ID (location of your data)
 ## Each OSF project or component has a unique 5-character node ID.
@@ -23,13 +24,14 @@ TOKEN <- "SzqxYX88znq4U5Epy5JV3t8NsH88RWLygXhLq1gi6hj5HWiEfBeQ4ORNaikCObqohPZL8G
 ## or component. Copy and paste that string below.
 
 ## NODE <- "paste_your_node_here"
-NODE <- "avm5d"
+## Note: Keep this node for your W11 Emotional Stroop Data:
+NODE <- "crbtp"
 
 ## Only download files matching this prefix
-PREFIX <- "lexical-decision"
+PREFIX <- "est-experiment"
 
 ## Only download files modified after this date (UTC)
-CUTOFF_DATE <- ymd("2025-10-15", tz = "UTC")
+CUTOFF_DATE <- ymd("2025-11-01", tz = "UTC")
 
 #### Fetch file listing --------------------------------------------------------
 BASE <- paste0("https://api.osf.io/v2/nodes/", NODE, "/files/osfstorage/")
