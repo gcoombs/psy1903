@@ -76,11 +76,13 @@ str(study_level)
 summary(study_level)
 print(study_level)
 ```
-The mean RT across the study is `r round(mean(study_level$mean_rt_correct, na.rm = TRUE), 2)` ms,  
-and the mean accuracy is `r round(mean(study_level$accuracy, na.rm = TRUE), 2)`.
+The mean RT across the study is `r round(mean(study_level$mean_rt_correct, na.rm = TRUE), 2)` ms, and the mean accuracy is `r round(mean(study_level$mean_accuracy, na.rm = TRUE)*100, 1)`%.
 
-The mean RT for positive trials is `r round(mean(study_level$mean_rt_positive, na.rm = TRUE), 2)` ms,  
-for negative trials is `r round(mean(study_level$mean_rt_negative, na.rm = TRUE), 2)` ms,  and for neutral trials is `r round(mean(study_level$mean_rt_neutral, na.rm = TRUE), 2)` ms.
+The mean RT for positive trials is `r round(mean(study_level$mean_rt_positive, na.rm = TRUE), 2)` ms.
+
+The mean RT for negative trials is `r round(mean(study_level$mean_rt_negative, na.rm = TRUE), 2)` ms. 
+
+The mean RT for neutral trials is  `r round(mean(study_level$mean_rt_neutral, na.rm = TRUE), 2)` ms.
 
 Neutral trials showed the fastest responses, followed by positive trials and then negative trials. This pattern suggests that the emotional content of the words slowed people down, and that negative words created the most interference.
 
